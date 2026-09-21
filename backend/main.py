@@ -17,32 +17,13 @@ models.Base.metadata.create_all(bind=engine)
 
 # FastAPI application
 app = FastAPI(
-    title="Employee Task Management System",
-    description="Backend API for managing employees and tasks",
-    version="1.0"
+    title="Employee Task Management System", description="Backend API for managing employees and tasks", version="1.0"
 )
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "https://employee-task-management-system-rust.vercel.app",
-        "http://localhost:5173",
-    ],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 # CORS - allows React frontend to communicate with FastAPI
 app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173"
-    ],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    CORSMiddleware, allow_origins=[ "https://employee-task-management-system-rust.vercel.app", "http://localhost:5173", "http://127.0.0.1:5173" ], allow_credentials=True, allow_methods=["*"], allow_headers=["*"],
 )
 
 
