@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://employee-task-management-system-quig.onrender.com";
 
 async function request(endpoint, options = {}) {
   const token = localStorage.getItem("token");
